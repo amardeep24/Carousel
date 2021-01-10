@@ -18,13 +18,13 @@ import {
     SliderContainer
 } from './Styled';
 
-function Carousel({ items, searched }) {
+function Carousel({ items, searched, filterProp }) {
     const [startIndex, setStartIndex] = useState(0);
     const [endIndex, setEndIndex] = useState(2);
     const [slider, setSlider] = useState([true, false, false]);
     const lastIndex = items.length - 1;
     const cards = getWrappedItems(items, startIndex, endIndex)
-        .filter(item => searched ? item.category.includes(searched) : true)
+        .filter(item => searched ? item[filterProp].includes(searched) : true)
         .map((item, i) =>
             <CSSTransition
                 key={item.id}

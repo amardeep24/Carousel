@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Search search={setSearch} />
-      <Carousel searched={search} items={products} />
+      <Carousel searched={search} items={products} filterProp={"category"}/>
     </div>
   );
 }
