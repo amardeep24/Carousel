@@ -8,15 +8,19 @@ import {
     navigateRight
 } from '../utils/utils';
 import {
-    CarouselContainer
+    CarouselContainer,
+    SliderActive,
+    SliderInActive,
+    SliderContainer
 } from './Styled';
 
 function Carousel({ items, searched }) {
     const [startIndex, setStartIndex] = useState(0);
     const [endIndex, setEndIndex] = useState(2);
+    const [slider, setSlider] = useState([true, false, false]);
     const lastIndex = items.length - 1;
     const cards = getWrappedItems(items, startIndex, endIndex)
-        .filter(item => searched ? item.category.includes(searched): true)
+        .filter(item => searched ? item.category.includes(searched) : true)
         .map((item, i) => {
             console.log(i === 1)
             return <Card
@@ -32,11 +36,25 @@ function Carousel({ items, searched }) {
     const handleLeftNav = useCallback(() => {
         setStartIndex(index => navigateLeft(index, lastIndex));
         setEndIndex(index => navigateLeft(index, lastIndex));
+        setSlider(s => {
+           let curr = s.findIndex(t => t);
+           curr = curr === 0 ? 2 : curr - 1;
+           const slider = new Array(3).fill(false);
+           slider[curr] = true;
+           return slider;
+        });
     }, [lastIndex]);
 
     const handleRightNav = useCallback(() => {
         setStartIndex(index => navigateRight(index, lastIndex));
         setEndIndex(index => navigateRight(index, lastIndex));
+        setSlider(s => {
+            let curr = s.findIndex(t => t);
+            curr = curr === 2 ? 0 : curr + 1;
+            const slider = new Array(3).fill(false);
+            slider[curr] = true;
+            return slider;
+         })
     }, [lastIndex]);
 
     return (
@@ -46,6 +64,9 @@ function Carousel({ items, searched }) {
                 {cards}
                 <CarouselNavigation direction={"right"} click={handleRightNav} />
             </CarouselContainer>
+            <SliderContainer>
+                {slider.map(f => f ? <SliderActive /> : <SliderInActive />)}
+            </SliderContainer>
         </div>
     )
 }
@@ -56,7 +77,7 @@ Carousel.propTypes = {
         name: PropTypes.string,
         img: PropTypes.string,
         price: PropTypes.number,
-        category:PropTypes.string
+        category: PropTypes.string
     })),
     searched: PropTypes.string
 }

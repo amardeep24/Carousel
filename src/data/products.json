@@ -1,35 +1,35 @@
 [
     {
         "id": 1,
-        "name": "Apple New iPhone 11 (64GB) - Black",
+        "name": "Apple New iPhone 11 - Black",
         "price": 51999.00,
         "category": "mobile",
         "img": "/images/iphone11_black.png"
     },
     {
         "id": 2,
-        "name": "New Apple iPhone 12 (64GB) - Blue",
+        "name": "New Apple iPhone 12 - Blue",
         "price":  79900.00,
         "category": "mobile",
         "img": "/images/iphone12_blue.png"
     },
     {
         "id": 3,
-        "name": "Apple New iPhone 12 Pro Max (128GB) - Pacific Blue",
+        "name": "Apple New iPhone 12 Pro Max",
         "price": 51999.00,
         "category": "mobile",
         "img": "/images/iphone12max_grey.png"
     },
     {
         "id": 4,
-        "name": "Apple New iPad (10.2-inch, Wi-Fi, 32GB) - Space Grey",
+        "name": "Apple New iPad",
         "price": 29990.00,
         "category": "tablet",
         "img": "/images/ipad_grey.png"
     },
     {
         "id": 5,
-        "name": "Apple iPhone 11 Pro (64GB) - Space Grey",
+        "name": "Apple iPhone 11 Pro",
         "price": 79899.00,
         "category": "mobile",
         "img": "/images/iphone11pro_grey.png"

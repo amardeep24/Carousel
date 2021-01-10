@@ -10,8 +10,8 @@ export const CardContainer = styled.div`
     &:hover{
         box-shadow: 0 40px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     }
-    border-radius: 10px;
-    background-color: #c4e3f2;
+    border-radius: 5px;
+    background-color:white;
 `;
 
 export const CardBody = styled.div`
@@ -28,7 +28,7 @@ export const CardImage = styled.img`
 export const CardHeader = styled.div`
     font-weight: 600;
     color: grey;
-`
+`;
 
 export const CardFooter = styled.div`
     font-weight: 300;
@@ -53,4 +53,28 @@ export const ButtonContainer = styled.div`
 export const NavigationButton = styled.div`
     align-self: center;
     cursor: pointer;
+    &:hover{
+        background-color: #eeeee4;
+        box-shadow: 0 40px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        border-radius: 50%;
+        opacity: 0.5;
+    }
 `
+export const SliderActive = styled.div`
+    width: 35px;
+    height: 5px;
+    background-color: grey;
+    margin: 6px;
+`;
+
+export const SliderInActive = styled.div`
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px;
+`;
+
+export const SliderContainer = styled.div`
+    justify-content: center;
+    display: flex;
+`;
