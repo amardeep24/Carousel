@@ -1,5 +1,9 @@
 import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
+import {
+    CSSTransition,
+    TransitionGroup,
+} from 'react-transition-group';
 import CarouselNavigation from './CarouselNavigation'
 import Card from "./Card";
 import {
@@ -21,27 +25,34 @@ function Carousel({ items, searched }) {
     const lastIndex = items.length - 1;
     const cards = getWrappedItems(items, startIndex, endIndex)
         .filter(item => searched ? item.category.includes(searched) : true)
-        .map((item, i) => {
-            console.log(i === 1)
-            return <Card
+        .map((item, i) =>
+            <CSSTransition
                 key={item.id}
-                title={item.name}
-                subHeader={item.price}
-                header={process.env.PUBLIC_URL + item.img}
-                footer={item.category}
-                active={i === 1}
-            />
-        });
+                timeout={1500}
+                classNames="fade"
+                unmountOnExit
+                appear
+            >
+                <Card
+                    key={item.id}
+                    title={item.name}
+                    subHeader={item.price}
+                    header={process.env.PUBLIC_URL + item.img}
+                    footer={item.category}
+                    active={i === 1}
+                />
+            </CSSTransition>
+        );
 
     const handleLeftNav = useCallback(() => {
         setStartIndex(index => navigateLeft(index, lastIndex));
         setEndIndex(index => navigateLeft(index, lastIndex));
         setSlider(s => {
-           let curr = s.findIndex(t => t);
-           curr = curr === 0 ? 2 : curr - 1;
-           const slider = new Array(3).fill(false);
-           slider[curr] = true;
-           return slider;
+            let curr = s.findIndex(t => t);
+            curr = curr === 0 ? 2 : curr - 1;
+            const slider = new Array(3).fill(false);
+            slider[curr] = true;
+            return slider;
         });
     }, [lastIndex]);
 
@@ -54,14 +65,16 @@ function Carousel({ items, searched }) {
             const slider = new Array(3).fill(false);
             slider[curr] = true;
             return slider;
-         })
+        })
     }, [lastIndex]);
 
     return (
         <div>
             <CarouselContainer>
                 <CarouselNavigation direction={"left"} click={handleLeftNav} />
-                {cards}
+                <TransitionGroup component={null}>
+                    {cards}
+                </TransitionGroup>
                 <CarouselNavigation direction={"right"} click={handleRightNav} />
             </CarouselContainer>
             <SliderContainer>
