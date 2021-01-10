@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import CarouselNavigation from './CarouselNavigation'
 import Card from "./Card";
@@ -51,7 +51,14 @@ function Carousel({ items, searched }) {
 }
 
 Carousel.propTypes = {
-
+    items: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string,
+        name: PropTypes.string,
+        img: PropTypes.string,
+        price: PropTypes.number,
+        category:PropTypes.string
+    })),
+    searched: PropTypes.string
 }
 
 export default Carousel

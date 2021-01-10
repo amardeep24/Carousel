@@ -27,7 +27,11 @@ function Card({ title, subHeader, header, footer, active }) {
 }
 
 Card.propTypes = {
-
+    title: PropTypes.string,
+    subHeader: PropTypes.string,
+    header: PropTypes.string,
+    footer: PropTypes.string,
+    active: PropTypes.bool
 }
 
 export default Card

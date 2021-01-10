@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import {debounce} from '../utils/utils';
@@ -26,3 +27,7 @@ function Search({ search }) {
 }
 
 export default Search
+
+Search.propTypes = {
+    search: PropTypes.string
+}
