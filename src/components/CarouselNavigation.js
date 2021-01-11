@@ -13,7 +13,7 @@ function CarouselNavigation(props) {
         <ButtonContainer onClick={props.click}>
             <NavigationButton>{icon}</NavigationButton>
         </ButtonContainer>
-    )
+    );
 }
 
 CarouselNavigation.propTypes = {
