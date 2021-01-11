@@ -81,3 +81,7 @@ export const SliderContainer = styled.div`
     justify-content: center;
     display: flex;
 `;
+export const ErrorMessage = styled.div`
+    margin: 20px;
+    color: red;
+`
