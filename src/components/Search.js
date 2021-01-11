@@ -29,5 +29,5 @@ function Search({ search }) {
 export default Search
 
 Search.propTypes = {
-    search: PropTypes.string
+    search: PropTypes.func
 }
