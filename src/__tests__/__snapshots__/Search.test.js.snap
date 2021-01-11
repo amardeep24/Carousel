@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test 1::The search component should match the snapshot should match snapshot 1`] = `ReactWrapper {}`;

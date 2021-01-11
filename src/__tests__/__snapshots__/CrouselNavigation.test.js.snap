@@ -1,5 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test 1::The CarouselNavigation component should match the snapshot should match snapshot 1`] = `ShallowWrapper {}`;
-
-exports[`Test 1::The card component should match the snapshot should match snapshot 1`] = `ShallowWrapper {}`;
+exports[`Test 1::The CarouselNavigation component should match the snapshot should match snapshot 1`] = `ReactWrapper {}`;

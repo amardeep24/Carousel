@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount, configure } from 'enzyme';
+import { mount, configure } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import Carousel from '../components/Carousel';
 import Card from '../components/Card';
@@ -12,7 +12,7 @@ describe('Test 1::The carousel component should match the snapshot', () => {
     let component;
 
     beforeEach(() => {
-        component = shallow(
+        component = mount(
             <Carousel
                 items={products}
                 renderFn={(item, idx) => <Card

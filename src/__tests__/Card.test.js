@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, configure } from 'enzyme';
+import { mount, shallow, configure } from 'enzyme';
 import Card from '../components/Card';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
@@ -9,7 +9,7 @@ describe('Test 1::The card component should match the snapshot', () => {
     let component;
 
     beforeEach(() => {
-        component = shallow(<Card
+        component = mount(<Card
             title="foo"
             subHeder={12000}
             header="bar"
