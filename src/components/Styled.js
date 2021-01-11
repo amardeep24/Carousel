@@ -14,7 +14,7 @@ export const CardContainer = styled.div`
     background-color:white;
     transform: ${props => props.active ? "skew(0deg, 0deg)" : props.left ? "skew(0deg, 5deg)": "skew(0deg, -5deg)"};
     opacity: ${props => props.opacity};
-    transition: all 2s ease .5s;
+    transition: all 1s ease-out .5s;
 `;
 
 export const CardBody = styled.div`
