@@ -12,6 +12,7 @@ export const CardContainer = styled.div`
     }
     border-radius: 5px;
     background-color:white;
+    transform: ${props => props.active ? "skew(0deg, 0deg)" : props.left ? "skew(0deg, 5deg)": "skew(0deg, -5deg)"};
 `;
 
 export const CardBody = styled.div`

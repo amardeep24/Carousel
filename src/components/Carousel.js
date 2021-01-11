@@ -40,6 +40,7 @@ function Carousel({ items, searched, filterProp }) {
                     header={process.env.PUBLIC_URL + item.img}
                     footer={item.category}
                     active={i === 1}
+                    left={i === 0}
                 />
             </CSSTransition>
         );
@@ -69,18 +70,22 @@ function Carousel({ items, searched, filterProp }) {
     }, [lastIndex]);
 
     return (
-        <div>
-            <CarouselContainer>
-                <CarouselNavigation direction={"left"} click={handleLeftNav} />
-                <TransitionGroup component={null}>
-                    {cards}
-                </TransitionGroup>
-                <CarouselNavigation direction={"right"} click={handleRightNav} />
-            </CarouselContainer>
-            <SliderContainer>
-                {slider.map(f => f ? <SliderActive /> : <SliderInActive />)}
-            </SliderContainer>
-        </div>
+        <>
+            {cards.length ?
+                <>
+                    <CarouselContainer>
+                        <CarouselNavigation direction={"left"} click={handleLeftNav} />
+                        <TransitionGroup component={null}>
+                            {cards}
+                        </TransitionGroup>
+                        <CarouselNavigation direction={"right"} click={handleRightNav} />
+                    </CarouselContainer>
+                    <SliderContainer>
+                        {slider.map(f => f ? <SliderActive /> : <SliderInActive />)}
+                    </SliderContainer>
+                </>
+                : "No Results"}
+        </>
     )
 }
 

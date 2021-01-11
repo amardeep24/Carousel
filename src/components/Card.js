@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 import { formatCurrency } from "../utils/utils";
 import {
     CardContainer,
@@ -9,9 +9,9 @@ import {
     CardImage
 } from './Styled';
 
-function Card({ title, subHeader, header, footer, active }) {
+function Card({ title, subHeader, header, footer, active, left }) {
     return (
-        <CardContainer active={active}>
+        <CardContainer active={active} left={left}>
             <CardHeader>
                 <CardImage src={header} />
                 {formatCurrency(subHeader)}
@@ -23,7 +23,7 @@ function Card({ title, subHeader, header, footer, active }) {
                 {footer}
             </CardFooter>
         </CardContainer>
-    )
+    );
 }
 
 Card.propTypes = {
