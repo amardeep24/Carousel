@@ -80,6 +80,6 @@ export function debounce(action, ...args) {
       timeout = setTimeout(() => {
         action(...args);
         timeout = null;
-      }, 2000);
+      }, 1000);
     };
   }

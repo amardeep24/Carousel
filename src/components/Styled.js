@@ -40,8 +40,7 @@ export const CardFooter = styled.div`
 
 export const SearchContainer = styled.div`
     position: relative;
-    left: 40%;
-    margin: 50px;
+    margin: 20px;
     text-align: center;
 `;
 export const CarouselContainer = styled.div`
@@ -84,4 +83,26 @@ export const SliderContainer = styled.div`
 export const ErrorMessage = styled.div`
     margin: 20px;
     color: red;
-`
+`;
+export const SearchResultContainer = styled.div`
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, auto));
+    grid-template-rows: repeat(4, mnmax(300px, auto));
+    grid-gap: 20px;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const SearchBox = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const SelectContainer = styled.select`
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 9px;
+    border: 1px solid lightgrey;
+    background-color: rgba(255,255,255,.5);
+`;

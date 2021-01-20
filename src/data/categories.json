@@ -1,0 +1,5 @@
+[
+    {"label": "All", "value": "all"},
+    {"label": "Category", "value": "category"},
+    {"label": "Name", "value": "name"}
+]
