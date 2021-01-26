@@ -8,8 +8,7 @@ This widget is made using React, React-Hooks & React-Material icons.
      <Carousel 
       items={items}
       renderFn={(item, index) => <YourComponent {...item}/>}
-      searched={search}
-      filterProp={"filterKey"}/>
+     />
 ```
 
 Where `items` is an array of json objects which would render the cards of this component.
